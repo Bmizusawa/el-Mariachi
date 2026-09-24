@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { restaurant } from '@/data/restaurant';
 import { mainMenu } from '@/data/menu';
+import { asset } from '@/lib/asset';
 
 const highlights = [
   { name: 'Fajitas', blurb: 'Served sizzling with sautéed peppers, onions and all the fixings — chicken, steak, shrimp or Texas-style with all three.', image: '/images/fajitas.webp' },
@@ -27,7 +28,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-art">
-            <img src="/images/cover-art.webp" alt="Illustrated mariachi musician on a cobblestone village street, from the El Mariachi menu cover" />
+            <img src={asset('/images/cover-art.webp')} alt="Illustrated mariachi musician on a cobblestone village street, from the El Mariachi menu cover" />
             <span className="hero-badge">¡Bienvenidos!</span>
           </div>
         </div>
@@ -45,7 +46,7 @@ export default function Home() {
           <div className="card-grid">
             {highlights.map(h => (
               <article className="card" key={h.name} style={{ padding: 0, overflow: 'hidden' }}>
-                <img src={h.image} alt={`${h.name} at El Mariachi`} style={{ width: '100%', height: 170, objectFit: 'cover', display: 'block' }} />
+                <img src={asset(h.image)} alt={`${h.name} at El Mariachi`} style={{ width: '100%', height: 170, objectFit: 'cover', display: 'block' }} />
                 <div style={{ padding: '1.25rem 1.4rem 1.4rem' }}>
                   <h3>{h.name}</h3>
                   <p>{h.blurb}</p>

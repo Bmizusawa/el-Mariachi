@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { navigation, restaurant } from '@/data/restaurant';
+import { asset } from '@/lib/asset';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -11,7 +12,7 @@ export default function Header() {
     <header className="site-header">
       <div className="header-inner">
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
-          <img className="brand-mark-img" src="/images/mariachi-badge.webp" alt="" width={40} height={40} />
+          <img className="brand-mark-img" src={asset('/images/mariachi-badge.webp')} alt="" width={40} height={40} />
           <span>
             <span className="brand-name">El Mariachi</span>
             <span className="brand-sub">family owned &amp; operated</span>

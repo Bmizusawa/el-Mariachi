@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { navigation, restaurant } from '@/data/restaurant';
+import { asset } from '@/lib/asset';
 
 export default function Footer() {
   const a = restaurant.address;
@@ -9,7 +10,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
-              <img src="/images/mariachi-badge.webp" alt="" width={52} height={52} />
+              <img src={asset('/images/mariachi-badge.webp')} alt="" width={52} height={52} />
               <span className="footer-brand">El Mariachi</span>
             </div>
             <p>{restaurant.tagline}. Serving Prattville, Alabama.</p>

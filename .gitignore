@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+test-results/
+playwright-report/
+.review/
+*.tsbuildinfo
+next-env.d.ts
+el mariachi - Google Search.html
+el mariachi - Google Search_files/

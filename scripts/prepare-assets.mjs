@@ -29,6 +29,10 @@ const mark = await sharp('image0.jpeg')
   .rotate(90)
   .extract({ left: 920, top: 1020, width: 720, height: 720 })
   .resize(512, 512)
+  .normalise()
+  .modulate({ saturation: 1.6 })
+  .linear(1.05, -6)
+  .sharpen({ sigma: 1 })
   .png()
   .toBuffer();
 await sharp(mark).webp({ quality: 90 }).toFile('public/images/mariachi-mark.webp');
